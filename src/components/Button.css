@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+.button-wrapper{
+    font-size: 2rem;
+    padding: 1em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 3px solid rgb(75, 7, 153);
+    border-radius: 5%;
+    font-family: 'Zen Antique Soft', serif;
+}
+.button-wrapper:hover{
+    border: 3px solid currentColor;
+    text-shadow: currentColor 1px 0 4px;
+}
+
