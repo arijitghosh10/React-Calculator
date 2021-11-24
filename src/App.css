@@ -5,11 +5,27 @@
 }
 .wrapper{
     height: 100vh;
-    max-height: 67rem;
+    height: 60rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.switchBtn{
+    font-size: 2rem;
+    padding: 1rem 2.5rem;
+    border-radius: 2rem;
+    border: none;
+    margin: 1rem auto;
+    background-color: #001;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 350ms ease-in;
+}
+.switchBtn:hover,.switchBtn:focus-visible{
+    box-shadow: 0 0 3px 2px currentColor;
+    text-shadow: 0 0 2px currentColor;
+    outline: none;
 }
 
 
