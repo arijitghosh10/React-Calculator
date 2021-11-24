@@ -28,12 +28,24 @@ const Calculator = () => {
             }
         }
     }
+    const checkParanthesis = (str)=>{
+        let x=0,y=0;
+        for(let i=0;i<str.length;i++){
+            if(str[i]==='(') x++
+            else if(str[i]===')') y++
+        }
+        return (x!==y)
+    }
     const calculate = () => {
         setFlag(1)
         if (inputValue === "") return;
         if(inputValue[inputValue.length-1] === '+' || inputValue[inputValue.length-1] === '^' || inputValue[inputValue.length-1] === '+'|| inputValue[inputValue.length-1] === '*' || inputValue[inputValue.length-1] === '/' || inputValue[inputValue.length-1] === '-') return;
-        const input = inputValue.join("") 
-        setAnswer(`=${math.evaluate(input)}`)
+        const input = inputValue.join("")
+        if(checkParanthesis(input)){ 
+            setAnswer(`=${math.evaluate(input + ')')}`)
+        }else{
+            setAnswer(`=${math.evaluate(input)}`)
+        }
         if (input === " ") {
             setFlag(0)
         }
@@ -47,7 +59,11 @@ const Calculator = () => {
         const updatedAns = inputValue.slice(0, -1)
         setInputValue(updatedAns)
         if (!isNaN(updatedAns[updatedAns.length - 1]) && flag === 1) {
-            setAnswer(`=${math.evaluate(updatedAns.join(""))}`)
+            if(checkParanthesis(updatedAns.join(""))){ 
+                setAnswer(`=${math.evaluate(updatedAns.join("") + ')')}`)
+            }else{
+                setAnswer(`=${math.evaluate(updatedAns.join(""))}`)
+            }
         } else {
             setAnswer('')
         }

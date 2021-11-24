@@ -32,8 +32,9 @@
     cursor: pointer;
     transition: all 500ms ease-in;
 }
-.themeBtn:hover{
+.themeBtn:hover,.themeBtn:focus-visible{
     box-shadow: 0 0 10px 0 rgb(230, 4, 230);
+    outline: none;
 }
 @media(max-width:500px){
     html{
